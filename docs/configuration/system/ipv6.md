@@ -162,14 +162,10 @@ Information Base)`.
 **Prevent IPv6 next hop tracking from resolving next hops through the
 default route.**
 
-By default, next hop tracking considers a next hop reachable when only
-the default route covers it. This command makes next hop tracking
-require a more specific route.
-
-The default applies to the `traditional` profile of `system frr
-profile`, which is the default profile. With the `datacenter` profile,
-next hop tracking does not resolve next hops through the default route,
-so this command has no effect under that profile.
+With the default `traditional` profile, next hop tracking can resolve a
+next hop through the default route. This command makes next hop tracking
+require a more specific route. The `datacenter` profile does not resolve
+next hops through the default route, so this command has no effect there.
 
 This command applies to the default VRF. Use `vrf name <name> ipv6 nht
 no-resolve-via-default` for another VRF.
